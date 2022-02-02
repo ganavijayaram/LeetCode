@@ -10,10 +10,9 @@ class Solution:
                 if(len(strs[i+1]) < common_prefix):
                     common_prefix = len(strs[i+1])
                 j=0
-                while(j < common_prefix):
+                for j in range(common_prefix):
                     if(strs[i][j] != strs[i+1][j]):
                         break
-                    j += 1
                 else:
                     j += 1
                 if(j < common_prefix):
