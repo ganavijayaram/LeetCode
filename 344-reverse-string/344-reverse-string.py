@@ -4,5 +4,4 @@ class Solution:
         Do not return anything, modify s in-place instead.
         """
         for  i in range(len(s)):
-            letter = s.pop()
-            s.insert(i, letter)
+            s.insert(i, s.pop())
