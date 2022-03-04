@@ -22,7 +22,7 @@ class Solution:
         prev2 = start2
         x = 0
         next1 = None
-        while((start1 != None) and (start2 != None)):
+        while((start1) and (start2)):
             while((start1 != None) and (start2 != None) and (start1.val >= start2.val)):
                 prev2 = start2
                 start2 = start2.next
