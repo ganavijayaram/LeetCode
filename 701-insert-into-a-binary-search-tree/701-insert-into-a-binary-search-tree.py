@@ -9,21 +9,21 @@ class Solution:
         if(root == None):
             root = TreeNode(val)
             return root
-        curr = root
-        while(True):
-            if(val < curr.val):
-                if(curr.left == None):
-                    curr.left = TreeNode(val)
-                    break
-                else:
-                    curr = curr.left
-            else:
-                if(curr.right == None):
-                    curr.right = TreeNode(val)
-                    break
-                else:
-                    curr = curr.right
+        self.insert(root, val)
         return root
+        
+    def insert(self, curr, val):
+        
+        if(val < curr.val):
+            if(curr.left == None):
+                curr.left = TreeNode(val)
+                return
+            return self.insert(curr.left, val)
+        else:
+            if(curr.right == None):
+                curr.right = TreeNode(val)
+                return
+            return self.insert(curr.right, val)
         
         
         
