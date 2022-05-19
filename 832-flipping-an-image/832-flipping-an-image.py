@@ -3,18 +3,17 @@ class Solution:
         i = 0
         for index in image:
             length = len(index)
-            for j in range(length//2):
-                swap = image[i][j]
-                image[i][j] = image[i][length-1-j]
+            if(length % 2 == 0):
+                k = length//2
+            else:
+                k =(length//2)+1
+            for j in range(k):
+                print("j = ", j)
+                swap = image[i][j] ^ 1
+                image[i][j] = image[i][length-1-j] ^ 1
                 image[i][length-1-j] = swap
+            #print(image[i])
             i += 1
-            
-        i = 0
-        for index in image:
-            for j in range(len(index)):
-                image[i][j] ^= 1
-            i += 1
-            
         return image
     
         
