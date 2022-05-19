@@ -8,11 +8,9 @@ class Solution:
             else:
                 k =(length//2)+1
             for j in range(k):
-                print("j = ", j)
                 swap = image[i][j] ^ 1
                 image[i][j] = image[i][length-1-j] ^ 1
                 image[i][length-1-j] = swap
-            #print(image[i])
             i += 1
         return image
     
