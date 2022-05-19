@@ -12,10 +12,7 @@ class Solution:
         i = 0
         for index in image:
             for j in range(len(index)):
-                if(image[i][j] == 1):
-                    image[i][j] = 0
-                else:
-                    image[i][j] = 1
+                image[i][j] ^= 1
             i += 1
             
         return image
