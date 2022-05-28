@@ -1,3 +1,4 @@
+import math
 class Solution:
     def findNumbers(self, nums: List[int]) -> int:
         tot_count = 0
