@@ -5,8 +5,8 @@ class Solution:
         for i in candies:
             if(i > maximum):
                 maximum = i
-        for i in range(len(candies)):
-            if(candies[i] + extraCandies >= maximum):
+        for i in candies:
+            if(i + extraCandies >= maximum):
                 output.append(True)
             else:
                 output.append(False)
