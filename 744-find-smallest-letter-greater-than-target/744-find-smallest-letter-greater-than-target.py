@@ -6,8 +6,6 @@ class Solution:
             mid = start + (end-start)//2
             if(target < letters[mid]):
                 end = mid - 1
-            elif(target > letters[mid]):
-                start =  mid + 1
             else:
-                start = mid + 1
+                start =  mid + 1
         return letters[(end+1)%len(letters)]
