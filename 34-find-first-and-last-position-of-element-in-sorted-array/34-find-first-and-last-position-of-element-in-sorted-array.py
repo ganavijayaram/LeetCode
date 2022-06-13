@@ -11,7 +11,6 @@ class Solution:
                 start = mid + 1
             else:
                 end = mid - 1
-        array_start = start
         if(start > len(nums)-1 or start < 0 or nums[start] != target):
             return output
         output[0] = start
@@ -23,6 +22,5 @@ class Solution:
                 end = mid - 1
             else:
                 start = mid + 1
-        array_end = end
         output[1] = end
         return (output)
