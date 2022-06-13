@@ -9,12 +9,17 @@ class Solution:
             elif(target > letters[mid]):
                 start =  mid + 1
             else:
+                start = mid + 1
+                '''
                 if(mid == len(letters)-1):
                     return letters[0]
                 if(letters[mid+1] == target):
                     start = mid + 1
                 else:
                     return letters[mid+1]
+                '''
+        '''
         if(end == len(letters)-1):
             return letters[0]
-        return letters[end+1]
+        '''
+        return letters[(end+1)%len(letters)]
