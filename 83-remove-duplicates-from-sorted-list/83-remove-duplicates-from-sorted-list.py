@@ -11,14 +11,11 @@ class Solution(object):
         """
         if(head == None or head.next == None):
             return head
-        prev = head
-        temp = head.next
-        while(temp):
-            if(prev.val == temp.val):
-                prev.next = temp.next
-                temp = temp.next
+        temp = head
+        while(temp.next):
+            if(temp.val == temp.next.val):
+                temp.next = temp.next.next
             else:
-                prev = temp
                 temp = temp.next
         return head
         
