@@ -10,12 +10,25 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
-        D = {}
-        temp = head
-        while(temp):
-            if(temp in D):
+        slow = fast = head
+        if(fast == None):
+            return False
+        if(fast.next != None):
+            fast = fast.next
+            slow = slow.next
+        else:
+            return False
+        if(fast.next != None):
+            fast = fast.next
+        else:
+            return False
+        while(fast != None):
+            if(slow == fast):
                 return True
-            D[temp] = temp.val
-            temp = temp.next
+            slow = slow.next
+            fast = fast.next
+            if(fast != None):
+                fast = fast.next
         return False
+        
         
