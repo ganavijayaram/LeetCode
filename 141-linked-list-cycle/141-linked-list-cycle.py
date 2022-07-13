@@ -11,24 +11,11 @@ class Solution(object):
         :rtype: bool
         """
         slow = fast = head
-        if(fast == None):
-            return False
-        if(fast.next != None):
-            fast = fast.next
+        while(fast != None and fast.next != None):
             slow = slow.next
-        else:
-            return False
-        if(fast.next != None):
-            fast = fast.next
-        else:
-            return False
-        while(fast != None):
+            fast = fast.next.next
             if(slow == fast):
                 return True
-            slow = slow.next
-            fast = fast.next
-            if(fast != None):
-                fast = fast.next
         return False
         
         
