@@ -1,14 +1,23 @@
-class Solution:
-    def isHappy(self, n: int) -> bool:
-        D = {}
-        while(n != 1):
-            if(n in D):
+class Solution(object):
+    def isHappy(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        slow = fast = n
+        while(True):
+            slow = self.square(slow)
+            fast = self.square(fast)
+            fast = self.square(fast)
+            if(slow == 1 or fast == 1):
+                return True
+            if(slow == fast):
                 return False
-            D[n] = 1
-            s = str(n)
-            tot = 0
-            for i in s:
-                i = int(i)
-                tot += i**2
-            n = tot
-        return True
+            
+    def square(self, n):
+        tot = 0
+        while(n):
+            rem = n%10
+            n /= 10
+            tot += rem**2
+        return tot
