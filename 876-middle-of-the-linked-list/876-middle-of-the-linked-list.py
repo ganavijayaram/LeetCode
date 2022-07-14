@@ -11,14 +11,11 @@ class Solution(object):
         """
         if(head.next == None):
             return head
-        temp = head
-        count = 0
-        while(temp):
-            count += 1
-            temp = temp.next
-        count //= 2
-        temp = head
-        for i in range(count):
-            temp = temp.next
-        return temp
-        
+        slow = head
+        fast = head.next
+        while(fast != None and fast.next != None):
+            slow = slow.next
+            fast = fast.next.next
+        if(fast == None):
+            return slow
+        return slow.next
