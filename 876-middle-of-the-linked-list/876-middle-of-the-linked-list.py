@@ -12,11 +12,13 @@ class Solution(object):
         if(head.next == None):
             return head
         temp = head
-        D = {}
-        count = 1
+        count = 0
         while(temp):
-            D[count] = temp
             count += 1
             temp = temp.next
-        count -= 1
-        return D[count//2 + 1]
+        count //= 2
+        temp = head
+        for i in range(count):
+            temp = temp.next
+        return temp
+        
